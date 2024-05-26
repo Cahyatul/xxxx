@@ -39,8 +39,6 @@ def clean_text(text):
     text = stopword_remover.remove(text)
     return text
 
-# Input Teks
-text_input = st.text_area("Masukkan teks langsung di sini")
 
 # Input URL
 url_input = st.text_input("Masukkan URL artikel")
@@ -52,12 +50,6 @@ uploaded_file = st.file_uploader("Unggah Dokumen (PDF atau DOCX)")
 
 if st.button('Lihat Teks'):
     text = ''
-     if text_input:
-        # Proses teks langsung
-        text = text_input
-         text = clean_text(text)
-        st.session_state.text = text
-        st.write(text)
     if url_input:
         # Proses URL
         text = get_text_from_url(url_input)
