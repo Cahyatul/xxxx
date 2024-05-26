@@ -1,0 +1,19 @@
+{
+    "name": "Streamlit Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/python:3.9",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.9"
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt && python -c \"import nltk; nltk.download('punkt')\"",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    }
+}
